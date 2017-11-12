@@ -24,7 +24,7 @@
     - name: apache path
       command: ls /etc/
 
-     - name: copy apache virtual host config
+    - name: copy apache virtual host config
       copy: src=demo/demo.conf dest=/etc/apache2/sites-available mode=0755
       notify: restart apache2
 
