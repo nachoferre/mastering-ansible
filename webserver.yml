@@ -21,6 +21,10 @@
       copy: src=demo/app/ dest=/var/www/demo node=0755
       notify: restart apache2
 
+    - name: copy apache virtualhost config
+      copy: src=demo/demo.conf dest=/ect/apache2/sites-avaliable mode=0755
+      notify: restart apache2
+
   handlers:
     - name: restart apache2
       service: name=apache2 state=restarted
