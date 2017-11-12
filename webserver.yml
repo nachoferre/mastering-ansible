@@ -20,9 +20,12 @@
     - name: copy demos app source
       copy: src=demo/app/ dest=/var/www/demo node=0755
       notify: restart apache2
+    
+    - name: apache path
+      command: ls /etc/
 
     - name: copy apache virtualhost config
-      copy: src=demo/demo.conf dest=/ect/apache*/sites-avaliable mode=0755
+      copy: src=demo/demo.conf dest=/ect/apache/sites-avaliable mode=0755
       notify: restart apache2
 
   handlers:
