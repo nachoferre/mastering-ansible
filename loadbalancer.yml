@@ -1,0 +1,7 @@
+---
+- hosts: loadbalancer
+  tasks:
+    - name: install nginx
+      apt: name=nginx state=present update_cache=yes
+    - name: install git
+      apt: name=git state=present update_cache=yes
