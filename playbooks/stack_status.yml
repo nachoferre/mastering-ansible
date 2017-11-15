@@ -37,7 +37,7 @@
       when: "'Hello, from sunny' not in item.content"
       with_item: "{{lb_index.results}}"
 
-     - name: verify end -to-end db response
+    - name: verify end -to-end db response
       uri: url=http://{{item}}/db return_content=yes
       with_items: groups.loadbalancer
       register: lb_db
